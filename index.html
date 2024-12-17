@@ -228,9 +228,9 @@
             });
 
         document.getElementById("pokemon-form").addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Verhindert das Neuladen der Seite
             const pokemonId = document.getElementById("pokemon-id").value;
-            displayPokemon(pokemonId);
+            displayPokemon(pokemonId); // Zeigt das Pokémon an, wenn Eingabe gültig ist
         });
 
         // Funktion zur Pokémon-Anzeige (F2)
