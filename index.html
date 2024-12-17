@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Pokemon Display</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  <!--Mit diesem Bootstrap wird das responsive Design vereinfacht-->
     <style>
         body {
             background-color: #f0f0f0;
-            display: flex;
+            display: flex; /* Flexbox für zentriertes Layout */
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
@@ -32,7 +32,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        #pokemon-list-container {
+        #pokemon-list-container { /* Anzeige-Bereich für Pokémon-Liste (F2)*/
             opacity: 0.95;
             width: 50%;
             margin-left: 20px;
@@ -53,7 +53,7 @@
             padding: 30px;
             width: 100%;
         }
-        #pokemon-image {
+        #pokemon-image { /* Pokémon Bild-Container (F2)*/
             max-width: 100%;
             width: 300px;
             border-radius: 10px;
@@ -99,6 +99,8 @@
             font-weight: bold;
             text-transform: capitalize;
         }
+
+         /* Spezifische Typ-Farben */
         .type-grass { background-color: #78C850; }
         .type-poison { background-color: #A040A0; }
         .type-fire { background-color: #F08030; }
@@ -140,7 +142,9 @@
     </style>
 </head>
 <body>
-<div id="main-container">
+<!-- Haupt-Container für Layout-Aufteilung (F2) -->
+<div id="main-container"> 
+    <!-- Eingabe-Formular für Pokémon-ID (F2) -->
     <div id="form-container">
         
         <form id="pokemon-form" style="display: block;">
@@ -150,7 +154,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Pokemon anzeigen</button>
         </form>
-
+         <!-- Dynamische Anzeige für Pokémon-Details (F2) -->
         <div id="pokemon-container" class="card mx-auto">
             <h3 id="pokemon-name" class="card-title">Pokemon Name</h3>
             <img id="pokemon-image" class="card-img-top" src="" alt="Pokemon Image">
@@ -178,6 +182,7 @@
             </div>
         </div>
     </div>
+    <!-- Liste aller Pokémon (F2) -->
     <div id="pokemon-list-container">
         <h5>Pokemon Liste</h5>
         <div class="form-group mb-3">
@@ -187,6 +192,7 @@
     </div>
 </div>
 
+<!-- Script für Interaktivität -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("pokemon-search").addEventListener("input", function () {
@@ -227,6 +233,7 @@
             displayPokemon(pokemonId);
         });
 
+        // Funktion zur Pokémon-Anzeige (F2)
         function displayPokemon(pokemonId) {
             document.getElementById('pokemon-form').style.display = 'none';
             const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
